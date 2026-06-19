@@ -24,10 +24,12 @@ const pokemonSelected = async (pokemonUrl) => {
 
         const pokemonImage = document.getElementById("pokemon-image");
         const pokemonName = document.getElementById("pokemon-name");
+        const pokemonAbilities = document.getElementById("pokemon-abilities");
         const pokemonStats = document.getElementById("pokemon-stats");
 
         pokemonImage.src = response.sprites.front_default;
         pokemonName.textContent = response.name;
+        pokemonAbilities.textContent = `Habilidades: ${response.abilities.map(abilityInfo => abilityInfo.ability.name).join(', ')}`;
 
         pokemonStats.innerHTML = "";
 
