@@ -35,11 +35,36 @@ select {
     text-align: center;
 }
 
+#pokemon-image-container {
+    position: relative;
+    display: inline-block;
+    margin-top: 16px;
+}
+
 #pokemon-image {
     width: 180px;
     height: 180px;
     object-fit: contain;
-    margin-top: 16px;
+    display: block;
+}
+
+.type-badge {
+    position: absolute;
+    left: 50%;
+    bottom: 8px;
+    transform: translateX(-50%);
+    padding: 6px 10px;
+    border-radius: 999px;
+    font-size: 0.78rem;
+    background: rgba(15, 23, 42, 0.88);
+    color: #ffffff;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.2s ease;
+}
+
+#pokemon-image-container:hover .type-badge {
+    opacity: 1;
 }
 
 #pokemon-name {
